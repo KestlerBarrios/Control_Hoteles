@@ -1,0 +1,30 @@
+{
+  "name": "control_hoteles",
+  "version": "1.0.0",
+  "description": "Practica Supervisada #3",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KestlerBarrios/Control_Hoteles.git"
+  },
+  "author": "Kestler Barrios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KestlerBarrios/Control_Hoteles/issues"
+  },
+  "homepage": "https://github.com/KestlerBarrios/Control_Hoteles#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.2",
+    "nodemon": "^2.0.2"
+  }
+}
