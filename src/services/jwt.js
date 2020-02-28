@@ -7,14 +7,13 @@ const moment = require('moment')
 
 const secret = 'password'
 
-exports.createToken = function(user) {
+exports.createToken = function(hotel) {
     var payload = {
-        sub: user._id,
-        nombre: user.nombre,
-        usuario: user.usuario,
-        email: user.email,
-        rol: user.rol,
-        image: user.image,
+        sub: hotel._id,
+        nombre: hotel.nombre,
+        usuario: hotel.usuario,
+        email: hotel.email,
+        rol: hotel.rol,
         iat: moment().unix(),
         exp: moment().day(30, 'days').unix()
     }

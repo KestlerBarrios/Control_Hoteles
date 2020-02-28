@@ -21,6 +21,6 @@ exports.ensureAuth =  function(req, res, next) {
         return res.status(404).send({ message: 'El token no es valido' })
     }
 
-    req.user = payload
+    req.hotel = payload
     next()
 }
