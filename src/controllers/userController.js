@@ -13,6 +13,9 @@ function registrarHotel(req, res) {
         hotel.nombre = params.nombre
         hotel.usuario = params.usuario
         hotel.email = params.email
+        hotel.dueño = params.dueño
+        hotel.disponibilidad = params.disponibilidad
+        hotel.calificacion = params.calificacion
         hotel.rol = "ROLE_ADMIN"
         Hotel.find({ $or: [{ usuario: hotel.usuario }, { email: hotel.email }] }).exec((err, hoteles) => {
             if (err) return res.status(500).send({ message: 'Error en la peticion.' })
