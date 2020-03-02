@@ -23,19 +23,19 @@ function eliminarHotel(req, res) {
         return res.status(500).send({ message: 'No posee los permisos para eliminar el Hotel' })
     }
     Hotel.findByIdAndDelete(hotelId, (err, hotelEliminado) => {
-        if (err) return res.status(500).send({message: 'Error en la peticion'})
-        return res.status(200).send({message:'Hotel Eliminado', hotelDeleted: hotelEliminado})
+        if (err) return res.status(500).send({ message: 'Error en la peticion' })
+        return res.status(200).send({ message: 'Hotel Eliminado', hotelDeleted: hotelEliminado })
     })
 
 }
 
 function listarHoteles(req, res) {
-Hotel.find().exec((err, hoteles)=>{
-    if(err) return res.status(500).send({message: 'Error en la petcion'})
-    if (!hoteles) return res.status(404).send({ message: 'Error al listar los Hoteles' })
-    return res.status(200).send({listadoHoteles: hoteles})
+    Hotel.find().exec((err, hoteles) => {
+        if (err) return res.status(500).send({ message: 'Error en la petcion' })
+        if (!hoteles) return res.status(404).send({ message: 'Error al listar los Hoteles' })
+        return res.status(200).send({ listadoHoteles: hoteles })
 
-})
+    })
 }
 
 module.exports = {

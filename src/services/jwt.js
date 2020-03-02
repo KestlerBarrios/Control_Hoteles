@@ -19,3 +19,16 @@ exports.createToken = function(hotel) {
     }
     return jwt.encode(payload, secret)
 }
+
+exports.createTokenCliente = function(cliente) {
+    var payload = {
+        sub: cliente._id,
+        nombre: cliente.nombre,
+        usuario: cliente.usuario,
+        email: cliente.email,
+        rol: cliente.rol,
+        iat: moment().unix(),
+        exp: moment().day(30, 'days').unix()
+    }
+    return jwt.encode(payload, secret)
+}

@@ -96,7 +96,7 @@ function login(req, res) {
                     bcrypt.compare(params.password, cliente.password, (err, check) => {
                         if (check) {
                             if (params.gettoken) {
-                                return res.status(200).send({ token: jwt.createToken(cliente) })
+                                return res.status(200).send({ token: jwt.createTokenCliente(cliente) })
                             } else {
                                 cliente.password = undefined
                                 return res.status(200).send({ cliente: cliente })
